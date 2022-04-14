@@ -1,26 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <RDSInput @lookup-pi="convertPi" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RDSInput from './components/RDSInput.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RDSInput
+  },
+  methods: {
+    convertPi(piCode) {
+      console.log(piCode)
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  /* background-color:#222222; */
 }
 </style>
