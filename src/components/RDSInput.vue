@@ -2,33 +2,33 @@
 	<form @submit="submitPi">
 		<div class="form-control">
 			<input type="text" v-model="piCode" placeholder="Input PI Code" />
-			<input type="submit" value="Submit" />
+			<input class="btn-submit" type="submit" value="Submit" />
 		</div>
 	</form>
 </template>
 
 <script>
 export default {
-	name: 'RDSInput',
+	name: "RDSInput",
 	data() {
 		return {
-			piCode: ""
-		}
+			piCode: "",
+		};
 	},
 	methods: {
 		submitPi(e) {
-			e.preventDefault()
-			const pi = this.piCode
-			this.$emit('lookup-pi', pi)
-			this.piCode = ''
-		}
-	}
-}
+			e.preventDefault();
+			const pi = this.piCode;
+			this.$emit("lookup-pi", pi);
+			this.piCode = "";
+		},
+	},
+};
 </script>
 
 <style scoped>
 .add-form {
-	margin-bottom: 40px,
+	margin-bottom: 40px;
 }
 .form-control {
 	margin: 20px 0;
@@ -54,5 +54,22 @@ export default {
 .form-control-check input {
 	flex: 2;
 	height: 20px;
+}
+.btn-submit {
+	display: inline-block;
+	outline: 0;
+	cursor: pointer;
+	text-align: center;
+	border: 0;
+	padding: 7px 16px;
+	min-height: 36px;
+	min-width: 36px;
+	color: #ffffff;
+	background: #008060;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 14px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+		rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
 }
 </style>
